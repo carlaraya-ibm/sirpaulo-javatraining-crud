@@ -16,9 +16,8 @@ public class StudentsManager {
 	StudentsManager(String filename) {
 		this.filename = filename;
 		this.dataManager = new JsonFileManager<ArrayList<Student>>(
-					this.filename,
-					new TypeReference<ArrayList<Student>>() {}
-					);
+				this.filename,
+				new TypeReference<ArrayList<Student>>() {});
 		this.students = loadData();
 	}
 	
@@ -36,9 +35,9 @@ public class StudentsManager {
 
 	public Student updateStudent(int id, String name, int age) {
 		Student foundStudent = this.students.stream()
-					.filter(student -> student.id == id)
-					.findFirst()
-					.orElse(null);
+				.filter(student -> student.id == id)
+				.findFirst()
+				.orElse(null);
 		if (foundStudent == null)
 			return null;
 		foundStudent.name = name;

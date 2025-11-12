@@ -31,11 +31,12 @@ public class StudentsUI {
             	System.out.println("--- Student List ---");
             	ArrayList<Student> students = studentsManager.getAllStudents();
             	int size = students.size();
-            	for (int i = 0; i < size; i++)
-            	System.out.printf("Student{ID=%d, Name='%s', Age=%d}\n",
-            			students.get(i).id,
-            			students.get(i).name,
-            			students.get(i).age);
+            	for (int i = 0; i < size; i++) {
+                	System.out.printf("Student{ID=%d, Name='%s', Age=%d}\n",
+                			students.get(i).id,
+                			students.get(i).name,
+                			students.get(i).age);
+            	}
             	break;
             case 3:
             	System.out.print("Enter id of student to update: ");
